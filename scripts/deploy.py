@@ -7,7 +7,7 @@ from scripts.funciones_utiles import (
 
 
 
-def main():
+def deploy_contract():
     account = get_account()
     deploy_details = {
         'from': account
@@ -25,4 +25,8 @@ def main():
         deploy_details, 
         publish_source= config["networks"][network.show_active()].get("verify")) #para publicar el codigo en etherscan
     return fundme
+
+
+def main():
+    deploy_contract()
 
